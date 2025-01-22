@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace NodeCanvas.Tasks.Actions {
 
-	public class BrewCoffeeCT : ActionTask {
+	public class BrewCoffeeAT : ActionTask {
 
 		
 		public BBParameter<GameObject> coffeeGuy;
@@ -33,12 +33,11 @@ namespace NodeCanvas.Tasks.Actions {
             
 		 bool Ordering = coffeeGuyBlackboard.GetVariableValue<bool>("Ordering");
 
-            if (Ordering == true)
+            if (Ordering == true && CoffeeMakeProgress.value <= 100)
 			{
 				Debug.Log("ordering more coffee");
 				CoffeeMakeProgress.value += Time.deltaTime * CoffeeFillRate.value;
 
-               
 				//coffeeGuyBlackboard.SetVariableValue("CaffeineDuration", caffeineAmount);
 
             }
@@ -52,6 +51,7 @@ namespace NodeCanvas.Tasks.Actions {
 		//Called when the task is disabled.
 		protected override void OnStop() {
             coffeeGuyBlackboard.SetVariableValue("Ordering", false);
+			CoffeeMakeProgress.value = 0f;
         }
 
 		//Called when the task is paused.

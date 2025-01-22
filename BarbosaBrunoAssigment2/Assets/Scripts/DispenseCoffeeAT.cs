@@ -9,6 +9,7 @@ namespace NodeCanvas.Tasks.Actions {
 
         public BBParameter<GameObject> coffeeGuy;
         private Blackboard coffeeGuyBlackboard;
+		public float ammountDispensed;
 
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
@@ -20,9 +21,11 @@ namespace NodeCanvas.Tasks.Actions {
 		//Call EndAction() to mark the action as finished, either in success or failure.
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
+			
             coffeeGuyBlackboard = coffeeGuy.value.GetComponent<Blackboard>();
             float caffeineAmount = coffeeGuyBlackboard.GetVariableValue<float>("CaffeineDuration");
-            coffeeGuyBlackboard.SetVariableValue("CaffeineDuration", 100f);
+			Debug.Log(caffeineAmount);
+            coffeeGuyBlackboard.SetVariableValue("CaffeineDuration", 25f);
             EndAction(true);
 		}
 
