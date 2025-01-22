@@ -461,6 +461,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 696833855}
+  - {fileID: 866253413}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &718011003
@@ -512,20 +513,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"CaffeineDuration":{"_name":"CaffeineDuration","_targetVariableID":"c39b6927-b82c-4b91-b32c-0bda69853c19"},"ShakeIntensity":{"_name":"ShakeIntensity","_targetVariableID":"1236dcc8-6045-49d2-a4be-5807ea9f9c2b"},"$type":"NodeCanvas.Tasks.Actions.ShakeAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Shake","_position":{"x":522.0,"y":178.0},"_comment":"character
-    shakes","$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[{"CoffeePressPlate":1,"WalkSpeed":{"_name":"WalkSpeed","_targetVariableID":"7131942d-be1d-4fcb-95ae-87b480e15c47"},"$type":"NodeCanvas.Tasks.Actions.GrabCoffeeAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Grab","_position":{"x":443.5096,"y":590.9999},"_comment":"Character
-    walks towards coffee machine","$type":"NodeCanvas.StateMachines.ActionState","$id":"1"},{"_actionList":{"executionMode":1,"actions":[{"$type":"NodeCanvas.Tasks.Actions.ReturnAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Return","_position":{"x":728.0,"y":381.0},"_comment":"character
-    returns to wok","$type":"NodeCanvas.StateMachines.ActionState","$id":"2"},{"_actionList":{"executionMode":1,"actions":[{"$type":"NodeCanvas.Tasks.Actions.OutOfCoffee"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Out","_position":{"x":271.0,"y":394.038},"_comment":"character
-    realizes theyre out of coffee","$type":"NodeCanvas.StateMachines.ActionState","$id":"3"}],"connections":[{"_condition":{"CaffeineDuration":{"_name":"CaffeineDuration","_targetVariableID":"c39b6927-b82c-4b91-b32c-0bda69853c19"},"$type":"NodeCanvas.Tasks.Conditions.IsCaffeinated"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
+  _boundGraphSerialization: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"CaffeineDuration":{"_name":"CaffeineDuration","_targetVariableID":"c39b6927-b82c-4b91-b32c-0bda69853c19"},"ShakeIntensity":{"_name":"ShakeIntensity","_targetVariableID":"1236dcc8-6045-49d2-a4be-5807ea9f9c2b"},"MaxCaffeineDuration":{"_name":"maxCaffeineDuration","_targetVariableID":"412fb141-0929-4809-b58a-a72a2df0af90"},"MaxShakeIntensity":{"_name":"MaxShakeIntensity","_targetVariableID":"c9587802-e471-4632-bf71-565c750017e1"},"$type":"NodeCanvas.Tasks.Actions.ShakeAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Shake","_position":{"x":523.0159,"y":178.0},"_comment":"character
+    shakes","$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[{"SmokeParticle":1,"spawnPoint":2,"$type":"NodeCanvas.Tasks.Actions.OutOfCoffee"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Out","_position":{"x":272.92,"y":394.038},"_comment":"character
+    realizes theyre out of coffee","$type":"NodeCanvas.StateMachines.ActionState","$id":"1"},{"_actionList":{"executionMode":1,"actions":[{"CoffeePressPlate":3,"WalkSpeed":{"_name":"WalkSpeed","_targetVariableID":"7131942d-be1d-4fcb-95ae-87b480e15c47"},"$type":"NodeCanvas.Tasks.Actions.GrabCoffeeAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Grab","_position":{"x":443.5096,"y":596.7598},"_comment":"Character
+    walks towards coffee machine","$type":"NodeCanvas.StateMachines.ActionState","$id":"2"},{"_actionList":{"executionMode":1,"actions":[{"$type":"NodeCanvas.Tasks.Actions.ReturnAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Return","_position":{"x":728.0,"y":381.0},"_comment":"character
+    returns to wok","$type":"NodeCanvas.StateMachines.ActionState","$id":"3"}],"connections":[{"_condition":{"CaffeineDuration":{"_name":"CaffeineDuration","_targetVariableID":"c39b6927-b82c-4b91-b32c-0bda69853c19"},"$type":"NodeCanvas.Tasks.Conditions.IsCaffeinated"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
+  - {fileID: 1378986498098665891, guid: 64bf3911f6d49014fadf5fc9bd20352b, type: 3}
+  - {fileID: 866253413}
   - {fileID: 2100730054}
   _boundGraphSource:
     _version: 3.31
     _category: 
     _comments: 
-    _translation: {x: -326, y: -79}
-    _zoomFactor: 0.9843811
+    _translation: {x: -206, y: -149}
+    _zoomFactor: 1
   _firstActivation: 0
   _enableAction: 0
   _disableAction: 0
@@ -567,6 +570,37 @@ Transform:
   - {fileID: 2141143339}
   - {fileID: 116717070}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &866253412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 866253413}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &866253413
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866253412}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.36, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 718011002}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &866422915
 GameObject:
@@ -962,7 +996,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 251d30ca5df07f642ae7dd017a1ed7cf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
