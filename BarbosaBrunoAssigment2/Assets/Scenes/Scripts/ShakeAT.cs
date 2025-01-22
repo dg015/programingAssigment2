@@ -7,7 +7,7 @@ namespace NodeCanvas.Tasks.Actions {
 	public class ShakeAT : ActionTask {
 
 		public BBParameter <float>  CaffeineDuration;
-		private float CountdownTimer;
+		
 		
 		//Use for initialization. This is called only once in the lifetime of the task.
 		//Return null if init was successfull. Return an error string otherwise
@@ -20,16 +20,21 @@ namespace NodeCanvas.Tasks.Actions {
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
 			
-			CaffeineDuration = CountdownTimer;
+			CaffeineDuration.value -= Time.deltaTime;
 
 
             //agentBlackboard.SetVariableValue("CaffeineDuration", CaffeineDuration);
-            EndAction(true);
+
+			
+            
 		}
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
-            CountdownTimer -= Time.deltaTime;
+            if(CaffeineDuration.value < 0) 
+			{
+                EndAction(true);
+            }
         }
 
 		//Called when the task is disabled.
