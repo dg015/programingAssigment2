@@ -53,8 +53,9 @@ namespace NodeCanvas.Tasks.Actions {
 		private void shake()
 		{
 			Debug.Log("Man I love coffee");
-			float randomVar = Random.Range(-1,1) * ShakeIntensity.value;
+			float randomVar = Random.Range(-ShakeIntensity.value, ShakeIntensity.value);
 			Vector3 shakeDirection = new Vector3(randomVar, randomVar, randomVar);
+			ShakeIntensity.value = Mathf.Clamp(ShakeIntensity.value,-0.09f, 0.09f);
             Debug.Log(shakeDirection);
             agent.transform.localPosition = shakeDirection;
 		}
