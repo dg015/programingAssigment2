@@ -6,12 +6,12 @@ namespace NodeCanvas.Tasks.Actions {
 
 	public class ShakeAT : ActionTask {
 
-		public BBParameter <float>  CaffeineDuration;
-		
-		
-		//Use for initialization. This is called only once in the lifetime of the task.
-		//Return null if init was successfull. Return an error string otherwise
-		protected override string OnInit() {
+		public BBParameter <float> CaffeineDuration;
+        public BBParameter <float> ShakeIntensity;
+
+        //Use for initialization. This is called only once in the lifetime of the task.
+        //Return null if init was successfull. Return an error string otherwise
+        protected override string OnInit() {
 			return null;
 		}
 
@@ -20,21 +20,24 @@ namespace NodeCanvas.Tasks.Actions {
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
 			
-			CaffeineDuration.value -= Time.deltaTime;
-
-
-            //agentBlackboard.SetVariableValue("CaffeineDuration", CaffeineDuration);
-
 			
-            
+
+
 		}
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
-            if(CaffeineDuration.value < 0) 
+			//deduct the caffeine overtime
+            CaffeineDuration.value -= Time.deltaTime;
+            if (CaffeineDuration.value < 0) 
 			{
+				//if its 0 then set move on into the next area
                 EndAction(true);
             }
+			else if (CaffeineDuration.value > 0)
+			{
+				shake();
+			}
         }
 
 		//Called when the task is disabled.
@@ -45,6 +48,15 @@ namespace NodeCanvas.Tasks.Actions {
 		//Called when the task is paused.
 		protected override void OnPause() {
 			
+		}
+
+		private void shake()
+		{
+			Debug.Log("Man I love coffee");
+			float randomVar = Random.Range(-1,1) * ShakeIntensity.value;
+			Vector3 shakeDirection = new Vector3(randomVar, randomVar, randomVar);
+            Debug.Log(shakeDirection);
+            agent.transform.localPosition = shakeDirection;
 		}
 	}
 }
