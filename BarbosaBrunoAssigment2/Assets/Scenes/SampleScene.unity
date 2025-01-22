@@ -514,7 +514,7 @@ MonoBehaviour:
     _version: 3.31
     _category: 
     _comments: 
-    _translation: {x: 1, y: -30}
+    _translation: {x: -274, y: -56}
     _zoomFactor: 1
   _firstActivation: 0
   _enableAction: 0
@@ -710,8 +710,8 @@ Transform:
   m_GameObject: {fileID: 1029948343}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6093, y: -0.4, z: 2.06}
-  m_LocalScale: {x: 2.2185, y: 1, z: 1}
+  m_LocalPosition: {x: -0.6093, y: -0.4, z: 1.8342}
+  m_LocalScale: {x: 2.2185, y: 1, z: 0.5484}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 723349784}
@@ -1404,8 +1404,8 @@ Transform:
   m_GameObject: {fileID: 2141143338}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6093, y: 1.5, z: 2.06}
-  m_LocalScale: {x: 2.2185, y: 1, z: 1}
+  m_LocalPosition: {x: -0.6093, y: 1.5, z: 1.8833}
+  m_LocalScale: {x: 2.2185, y: 1, z: 0.6467}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 723349784}
