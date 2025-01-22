@@ -1,14 +1,18 @@
 using NodeCanvas.Framework;
+using NodeCanvas.Tasks.Actions;
 using ParadoxNotion.Design;
+using UnityEngine;
 
 
 namespace NodeCanvas.Tasks.Conditions {
 
 	public class GotTheCoffeCT : ConditionTask {
+        public BBParameter<GameObject> coffeeGuy;
 
-		//Use for initialization. This is called only once in the lifetime of the task.
-		//Return null if init was successfull. Return an error string otherwise
-		protected override string OnInit(){
+
+        //Use for initialization. This is called only once in the lifetime of the task.
+        //Return null if init was successfull. Return an error string otherwise
+        protected override string OnInit(){
 			return null;
 		}
 

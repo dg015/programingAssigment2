@@ -2,14 +2,14 @@ using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 using UnityEngine;
 
-
 namespace NodeCanvas.Tasks.Actions {
 
-	public class GrabCoffeeAT : ActionTask {
+	public class BrewCoffeeCT : ActionTask {
 
-        public Transform CoffeePressPlate;
-        public BBParameter<float> WalkSpeed;
-        public bool OrderingCoffee;
+		public GrabCoffeeAT grabCoffee;
+		public BBParameter<GameObject> coffeeGuy;
+		private Blackboard coffeeGuyBlackboard;
+		float coffeeAmount;
 
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
@@ -21,25 +21,28 @@ namespace NodeCanvas.Tasks.Actions {
 		//Call EndAction() to mark the action as finished, either in success or failure.
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
+            coffeeGuyBlackboard = coffeeGuy.value.GetComponent<Blackboard>();
+
 			
 		}
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
+            
+		//float caffeineAmount = coffeeGuyBlackboard.GetVariableValue<float>("CaffeineDuration");
 
+            if (grabCoffee.OrderingCoffee == true)
+			{
+                coffeeAmount += Time.deltaTime;
+				//coffeeGuyBlackboard.SetVariableValue("CaffeineDuration", caffeineAmount);
 
-            if (Vector3.Distance(agent.transform.position, CoffeePressPlate.position) < 0.5f)
-            {
-                OrderingCoffee = true;
-                Debug.Log("arrived");
+            }
+			if(coffeeAmount >= 100)
+			{
+				Debug.Log("coffee is ready");
                 EndAction(true);
             }
-            else
-            {
-                OrderingCoffee = false;
-                WalkToCoffee();
-            }
-        }
+		}
 
 		//Called when the task is disabled.
 		protected override void OnStop() {
@@ -50,14 +53,5 @@ namespace NodeCanvas.Tasks.Actions {
 		protected override void OnPause() {
 			
 		}
-
-        private void WalkToCoffee()
-        {
-            Debug.Log("gotta get more coffee");
-            float WalkingTowards = WalkSpeed.value * Time.deltaTime;
-
-
-            agent.transform.position = Vector3.MoveTowards(agent.transform.position, CoffeePressPlate.position, WalkingTowards);
-        }
-    }
+	}
 }
