@@ -476,9 +476,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parentBlackboard: {fileID: 0}
-  _serializedBlackboard: '{"_variables":{}}'
+  _serializedBlackboard: '{"_variables":{"ShakeIntensity":{"_name":"ShakeIntensity","_id":"1236dcc8-6045-49d2-a4be-5807ea9f9c2b","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"WalkSpeed":{"_name":"WalkSpeed","_id":"7131942d-be1d-4fcb-95ae-87b480e15c47","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"CaffeineDuration":{"_name":"CaffeineDuration","_id":"c39b6927-b82c-4b91-b32c-0bda69853c19","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
   _objectReferences: []
-  _serializedVariables: []
+  _serializedVariables:
+  - _json: '{"_name":"ShakeIntensity","_id":"1236dcc8-6045-49d2-a4be-5807ea9f9c2b","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
+    _references: []
+  - _json: '{"_name":"WalkSpeed","_id":"7131942d-be1d-4fcb-95ae-87b480e15c47","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
+    _references: []
+  - _json: '{"_name":"CaffeineDuration","_id":"c39b6927-b82c-4b91-b32c-0bda69853c19","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
+    _references: []
 --- !u!114 &718011004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -502,7 +514,7 @@ MonoBehaviour:
     _version: 3.31
     _category: 
     _comments: 
-    _translation: {x: 160, y: 13}
+    _translation: {x: 1, y: -30}
     _zoomFactor: 1
   _firstActivation: 0
   _enableAction: 0
