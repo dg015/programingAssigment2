@@ -30,11 +30,12 @@ namespace NodeCanvas.Tasks.Actions {
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
-            
+            //get reference to coffee ordering
 		 bool Ordering = coffeeGuyBlackboard.GetVariableValue<bool>("Ordering");
 
             if (Ordering == true && CoffeeMakeProgress.value <= 100)
 			{
+				//check if theyre ordering and doesnt havea full cup
 				Debug.Log("ordering more coffee");
 				CoffeeMakeProgress.value += Time.deltaTime * CoffeeFillRate.value;
 
@@ -43,6 +44,7 @@ namespace NodeCanvas.Tasks.Actions {
             }
 			else if(CoffeeMakeProgress.value >= 100)
 			{
+				//if they have a full cup make them move on
 				Debug.Log("coffee is ready");
                 EndAction(true);
             }
@@ -50,6 +52,7 @@ namespace NodeCanvas.Tasks.Actions {
 
 		//Called when the task is disabled.
 		protected override void OnStop() {
+			//reset variable back to false
             coffeeGuyBlackboard.SetVariableValue("Ordering", false);
 			CoffeeMakeProgress.value = 0f;
         }

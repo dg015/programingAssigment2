@@ -18,6 +18,7 @@ namespace NodeCanvas.Tasks.Actions {
 		//Call EndAction() to mark the action as finished, either in success or failure.
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
+			//instantiate smoke cloud as if theyre annoyed
 			GameObject Particle = Object.Instantiate(SmokeParticle, spawnPoint);
 			EndAction(true);
 		}

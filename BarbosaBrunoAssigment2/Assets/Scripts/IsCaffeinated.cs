@@ -27,6 +27,7 @@ namespace NodeCanvas.Tasks.Conditions {
 		//Called once per frame while the condition is active.
 		//Return whether the condition is success or failure.
 		protected override bool OnCheck() {
+			//check if the player has not enough caffeine
             if (CaffeineDuration.value == 0)
             {
                 //if its 0 then set move on into the next area

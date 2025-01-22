@@ -27,16 +27,16 @@ namespace NodeCanvas.Tasks.Actions {
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
-
+            //return to table
             if (Vector3.Distance(agent.transform.position, TablePressPlate.position) < 0.5f)
             {
-                
+                //if theyre there stop
                 Debug.Log("arrived");
                 EndAction(true);
             }
             else
             {
-
+                //if not walk more to there
                 WalkToTable();
             }
         }
@@ -53,10 +53,11 @@ namespace NodeCanvas.Tasks.Actions {
 
         private void WalkToTable()
         {
+            //get distance to walk towards for the movetowards function
             Debug.Log("gotta get more coffee");
             float WalkingTowards = WalkSpeed.value * Time.deltaTime;
 
-
+            //move character to there
             agent.transform.position = Vector3.MoveTowards(agent.transform.position, TablePressPlate.position, WalkingTowards);
         }
     }

@@ -28,13 +28,15 @@ namespace NodeCanvas.Tasks.Conditions {
 		//Called once per frame while the condition is active.
 		//Return whether the condition is success or failure.
 		protected override bool OnCheck() {
+			//get refernce to variable to check if they're ordering
             bool Ordering = coffeeGuyBlackboard.GetVariableValue<bool>("Ordering");
             if (Ordering == true)
             {
+				//if yes set it true
                 Debug.Log("ordering more coffee");
                 return true;
 
-                //coffeeGuyBlackboard.SetVariableValue("CaffeineDuration", caffeineAmount);
+                
 
             }
 			else

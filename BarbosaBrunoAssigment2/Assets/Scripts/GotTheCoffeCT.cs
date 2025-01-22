@@ -13,6 +13,7 @@ namespace NodeCanvas.Tasks.Conditions {
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
         protected override string OnInit(){
+			//get the blackboard
             agentBlackboard = agent.GetComponent<Blackboard>();
             return null;
 		}
@@ -31,6 +32,7 @@ namespace NodeCanvas.Tasks.Conditions {
 		//Return whether the condition is success or failure.
 		protected override bool OnCheck() {
 			float caffeine = agentBlackboard.GetVariableValue<float>("CaffeineDuration");
+			//check if the caffeine is the right ammount
 			if(caffeine >= 20)
 			{
                 return true;

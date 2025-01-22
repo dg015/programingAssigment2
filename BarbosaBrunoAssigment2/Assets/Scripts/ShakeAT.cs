@@ -69,16 +69,19 @@ namespace NodeCanvas.Tasks.Actions {
 			Vector3 shakeDirection = new Vector3(randomVar, randomVar, randomVar);
 			
 
-            
+            //shake the character
             agent.transform.localPosition = originalPosition + shakeDirection;
+			//send them back to initial location so they dont "shake away"
 			agent.transform.localEulerAngles = originalPosition;
 		}
 
 		private void caffeineDeduction()
 		{
+			//decrease caffeine over time
             CaffeineDuration.value -= Time.deltaTime;
+			//lock it to minimum 0
 			CaffeineDuration.value = Mathf.Max(CaffeineDuration.value, 0);
-
+			//lerp the intensity so that it slows down with the caffeine duration
 			ShakeIntensity = Mathf.Lerp(0, MaxShakeIntensity.value, CaffeineDuration.value / MaxCaffeineDuration.value);
 
         }

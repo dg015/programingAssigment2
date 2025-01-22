@@ -22,9 +22,12 @@ namespace NodeCanvas.Tasks.Actions {
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
 			
+
+			//get varaibles
             coffeeGuyBlackboard = coffeeGuy.value.GetComponent<Blackboard>();
             float caffeineAmount = coffeeGuyBlackboard.GetVariableValue<float>("CaffeineDuration");
 			Debug.Log(caffeineAmount);
+			//give the character 25 seconds of caffeine as if they got a new coffee
             coffeeGuyBlackboard.SetVariableValue("CaffeineDuration", 25f);
             EndAction(true);
 		}

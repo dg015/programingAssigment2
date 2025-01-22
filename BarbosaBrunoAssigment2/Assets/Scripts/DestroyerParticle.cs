@@ -13,6 +13,7 @@ public class DestroyerParticle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //destroy after 3 seconds to not crowd the game
         Destroy(gameObject, 3f);
     }
 }

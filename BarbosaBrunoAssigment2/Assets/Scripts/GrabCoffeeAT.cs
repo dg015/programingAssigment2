@@ -31,13 +31,14 @@ namespace NodeCanvas.Tasks.Actions {
 
             if (Vector3.Distance(agent.transform.position, CoffeePressPlate.position) < 0.5f)
             {
+                //if theyre close enough to the machine make them order
                 Ordering.value = true;
                 Debug.Log("arrived");
                 EndAction(true);
             }
             else
             {
-                
+                // if not make them walk there
                 WalkToCoffee();
             }
         }
@@ -54,10 +55,12 @@ namespace NodeCanvas.Tasks.Actions {
 
         private void WalkToCoffee()
         {
+
             Debug.Log("gotta get more coffee");
+            //get the walk speed
             float WalkingTowards = WalkSpeed.value * Time.deltaTime;
 
-
+            //make them walk there
             agent.transform.position = Vector3.MoveTowards(agent.transform.position, CoffeePressPlate.position, WalkingTowards);
         }
     }
