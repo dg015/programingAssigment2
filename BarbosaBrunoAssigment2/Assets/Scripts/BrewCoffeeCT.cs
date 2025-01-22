@@ -6,10 +6,12 @@ namespace NodeCanvas.Tasks.Actions {
 
 	public class BrewCoffeeCT : ActionTask {
 
-		public GrabCoffeeAT grabCoffee;
+		
 		public BBParameter<GameObject> coffeeGuy;
-		private Blackboard coffeeGuyBlackboard;
-		float coffeeAmount;
+		public Blackboard coffeeGuyBlackboard;
+        public Blackboard agentBlackboard;
+        public BBParameter<float> CoffeeMakeProgress;
+        public BBParameter<float> CoffeeFillRate;
 
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
@@ -29,15 +31,18 @@ namespace NodeCanvas.Tasks.Actions {
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
             
-		//float caffeineAmount = coffeeGuyBlackboard.GetVariableValue<float>("CaffeineDuration");
+		 bool Ordering = coffeeGuyBlackboard.GetVariableValue<bool>("Ordering");
 
-            if (grabCoffee.OrderingCoffee == true)
+            if (Ordering == true)
 			{
-                coffeeAmount += Time.deltaTime;
+				Debug.Log("ordering more coffee");
+				CoffeeMakeProgress.value += Time.deltaTime * CoffeeFillRate.value;
+
+               
 				//coffeeGuyBlackboard.SetVariableValue("CaffeineDuration", caffeineAmount);
 
             }
-			if(coffeeAmount >= 100)
+			else if(CoffeeMakeProgress.value >= 100)
 			{
 				Debug.Log("coffee is ready");
                 EndAction(true);
@@ -46,8 +51,8 @@ namespace NodeCanvas.Tasks.Actions {
 
 		//Called when the task is disabled.
 		protected override void OnStop() {
-			
-		}
+            coffeeGuyBlackboard.SetVariableValue("Ordering", false);
+        }
 
 		//Called when the task is paused.
 		protected override void OnPause() {

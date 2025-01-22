@@ -9,7 +9,8 @@ namespace NodeCanvas.Tasks.Actions {
 
         public Transform CoffeePressPlate;
         public BBParameter<float> WalkSpeed;
-        public bool OrderingCoffee;
+        public BBParameter<bool> Ordering;
+        
 
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
@@ -30,13 +31,13 @@ namespace NodeCanvas.Tasks.Actions {
 
             if (Vector3.Distance(agent.transform.position, CoffeePressPlate.position) < 0.5f)
             {
-                OrderingCoffee = true;
+                Ordering.value = true;
                 Debug.Log("arrived");
                 EndAction(true);
             }
             else
             {
-                OrderingCoffee = false;
+                
                 WalkToCoffee();
             }
         }
