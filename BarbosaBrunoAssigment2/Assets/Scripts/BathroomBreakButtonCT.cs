@@ -48,6 +48,7 @@ namespace NodeCanvas.Tasks.Conditions {
 
 		private void BathroomBreakBoolean()
 		{
+			Debug.Log("NEED BATHROOM NOW");
 			//set the variable to true
 			pressed.value = true;
         }
