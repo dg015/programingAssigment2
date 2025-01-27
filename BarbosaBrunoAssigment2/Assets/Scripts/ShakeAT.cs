@@ -41,7 +41,7 @@ namespace NodeCanvas.Tasks.Actions {
             if (CaffeineDuration.value == 0) 
 			{
 				//if its 0 then set move on into the next area
-				Debug.Log("done");
+				
                 EndAction(true);
             }
 			else if (CaffeineDuration.value > 0)

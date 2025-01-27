@@ -33,6 +33,7 @@ namespace NodeCanvas.Tasks.Conditions {
 			BathroomButton.GetComponent<Button>().onClick.AddListener(BathroomBreakBoolean);
 			if(pressed.value == true)
 			{
+				Debug.Log("Gotta walk to the bathroom");
 				//if its pressed then set the varaible to go to the bathroom true
                 return true;
 
