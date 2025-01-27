@@ -1114,10 +1114,14 @@ MonoBehaviour:
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Toillet
     location":{"_value":1,"_name":"Toillet location","_id":"351401d3-a8fc-44ed-852d-e71c5110bc15","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"ButtonPressed":{"_name":"ButtonPressed","_id":"f807bbb6-cbcb-4828-b497-ec0280b0501c","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"CoffeePoint":{"_value":2,"_name":"CoffeePoint","_id":"811c94cd-43da-4ddc-b25c-90d031e44df0","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"DeskPlate":{"_value":3,"_name":"DeskPlate","_id":"4b85e12c-4847-4b1e-8414-e62a26ed7629","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
   _objectReferences:
   - {fileID: 0}
   - {fileID: 778104566}
+  - {fileID: 2100730054}
+  - {fileID: 2048778166}
   _serializedVariables:
   - _json: '{"_value":0.12,"_name":"ShakeIntensity","_id":"1236dcc8-6045-49d2-a4be-5807ea9f9c2b","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
@@ -1148,6 +1152,16 @@ MonoBehaviour:
   - _json: '{"_name":"ButtonPressed","_id":"f807bbb6-cbcb-4828-b497-ec0280b0501c","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
+  - _json: '{"_value":1,"_name":"CoffeePoint","_id":"811c94cd-43da-4ddc-b25c-90d031e44df0","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references:
+    - {fileID: 0}
+    - {fileID: 2100730054}
+  - _json: '{"_value":1,"_name":"DeskPlate","_id":"4b85e12c-4847-4b1e-8414-e62a26ed7629","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references:
+    - {fileID: 0}
+    - {fileID: 2048778166}
 --- !u!114 &718011004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1165,26 +1179,24 @@ MonoBehaviour:
     state","_targetVariableID":"b7de9e82-15c6-4da9-a0cc-8812012ee439"},"$type":"NodeCanvas.Tasks.Actions.ShakeAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Shake","_position":{"x":523.0159,"y":178.0},"_comment":"character
     shakes","$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[{"SmokeParticle":1,"spawnPoint":2,"currentState":{"_name":"Current
     state","_targetVariableID":"b7de9e82-15c6-4da9-a0cc-8812012ee439"},"$type":"NodeCanvas.Tasks.Actions.OutOfCoffee"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Out","_position":{"x":272.92,"y":394.038},"_comment":"character
-    realizes theyre out of coffee","$type":"NodeCanvas.StateMachines.ActionState","$id":"1"},{"_actionList":{"executionMode":1,"actions":[{"CoffeePressPlate":3,"WalkSpeed":{"_name":"WalkSpeed","_targetVariableID":"7131942d-be1d-4fcb-95ae-87b480e15c47"},"Ordering":{"_name":"Ordering","_targetVariableID":"c1d00f26-73da-4f36-93e3-0833e816986b"},"currentState":{"_name":"Current
+    realizes theyre out of coffee","$type":"NodeCanvas.StateMachines.ActionState","$id":"1"},{"_actionList":{"executionMode":1,"actions":[{"CoffeePressPlate":{"_name":"CoffeePoint","_targetVariableID":"811c94cd-43da-4ddc-b25c-90d031e44df0"},"WalkSpeed":{"_name":"WalkSpeed","_targetVariableID":"7131942d-be1d-4fcb-95ae-87b480e15c47"},"Ordering":{"_name":"Ordering","_targetVariableID":"c1d00f26-73da-4f36-93e3-0833e816986b"},"currentState":{"_name":"Current
     state","_targetVariableID":"b7de9e82-15c6-4da9-a0cc-8812012ee439"},"$type":"NodeCanvas.Tasks.Actions.GrabCoffeeAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Grab","_position":{"x":474.5096,"y":569.7598},"_comment":"Character
-    walks towards coffee machine","$type":"NodeCanvas.StateMachines.ActionState","$id":"2"},{"_actionList":{"executionMode":1,"actions":[{"TablePressPlate":4,"WalkSpeed":{"_name":"WalkSpeed","_targetVariableID":"7131942d-be1d-4fcb-95ae-87b480e15c47"},"currentState":{"_name":"Current
-    state","_targetVariableID":"b7de9e82-15c6-4da9-a0cc-8812012ee439"},"$type":"NodeCanvas.Tasks.Actions.ReturnAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Return","_position":{"x":727.9999,"y":382.421},"_comment":"character
-    returns to wok","$type":"NodeCanvas.StateMachines.ActionState","$id":"3"},{"_position":{"x":289.1864,"y":-107.1246},"$type":"NodeCanvas.StateMachines.AnyState","$id":"4"},{"_nestedFSM":{"_value":5},"_name":"Bathroom
-    break","_position":{"x":298.5986,"y":-18.33783},"$type":"NodeCanvas.StateMachines.NestedFSMState","$id":"5"}],"connections":[{"_condition":{"CaffeineDuration":{"_name":"CaffeineDuration","_targetVariableID":"c39b6927-b82c-4b91-b32c-0bda69853c19"},"$type":"NodeCanvas.Tasks.Conditions.IsCaffeinated"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"$type":"NodeCanvas.Tasks.Conditions.GotTheCoffeCT"},"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"BathroomButton":6,"pressed":{"_name":"ButtonPressed","_targetVariableID":"f807bbb6-cbcb-4828-b497-ec0280b0501c"},"$type":"NodeCanvas.Tasks.Conditions.BathroomBreakButtonCT"},"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
+    walks towards coffee machine","$type":"NodeCanvas.StateMachines.ActionState","$id":"2"},{"_actionList":{"executionMode":1,"actions":[{"WalkSpeed":{"_name":"WalkSpeed","_targetVariableID":"7131942d-be1d-4fcb-95ae-87b480e15c47"},"currentState":{"_name":"Current
+    state","_targetVariableID":"b7de9e82-15c6-4da9-a0cc-8812012ee439"},"DeskLocation":{"_name":"DeskPlate","_targetVariableID":"4b85e12c-4847-4b1e-8414-e62a26ed7629"},"$type":"NodeCanvas.Tasks.Actions.ReturnAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Return","_position":{"x":726.9999,"y":382.421},"_comment":"character
+    returns to wok","$type":"NodeCanvas.StateMachines.ActionState","$id":"3"},{"_position":{"x":289.1864,"y":-107.1246},"$type":"NodeCanvas.StateMachines.AnyState","$id":"4"},{"_nestedFSM":{"_value":3},"_name":"Bathroom
+    break","_position":{"x":299.9343,"y":-18.33782},"$type":"NodeCanvas.StateMachines.NestedFSMState","$id":"5"}],"connections":[{"_condition":{"CaffeineDuration":{"_name":"CaffeineDuration","_targetVariableID":"c39b6927-b82c-4b91-b32c-0bda69853c19"},"$type":"NodeCanvas.Tasks.Conditions.IsCaffeinated"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"$type":"NodeCanvas.Tasks.Conditions.GotTheCoffeCT"},"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"BathroomButton":4,"pressed":{"_name":"ButtonPressed","_targetVariableID":"f807bbb6-cbcb-4828-b497-ec0280b0501c"},"$type":"NodeCanvas.Tasks.Conditions.BathroomBreakButtonCT"},"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
   - {fileID: 1378986498098665891, guid: 64bf3911f6d49014fadf5fc9bd20352b, type: 3}
   - {fileID: 866253413}
-  - {fileID: 2100730054}
-  - {fileID: 1497420114}
   - {fileID: 11400000, guid: c22c29cb938b8ca459cd2d1c76c19cf2, type: 2}
   - {fileID: 1634542784}
   _boundGraphSource:
     _version: 3.31
     _category: 
     _comments: 
-    _translation: {x: -109, y: 329}
-    _zoomFactor: 0.95364785
+    _translation: {x: 405, y: 124}
+    _zoomFactor: 1
   _firstActivation: 0
   _enableAction: 0
   _disableAction: 0
@@ -1283,7 +1295,7 @@ MonoBehaviour:
     _version: 3.31
     _category: 
     _comments: 
-    _translation: {x: -31, y: -88}
+    _translation: {x: 153, y: -37}
     _zoomFactor: 1
   _firstActivation: 0
   _enableAction: 0
@@ -1653,7 +1665,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -1.1708244, y: -0.42128426, z: -1.4157865}
-  m_LocalScale: {x: -1.2073712, y: 0.60776, z: 0.08240439}
+  m_LocalScale: {x: 1.207371, y: 0.60776, z: 0.08240439}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2080517013}
@@ -1968,7 +1980,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.1708244, y: 0.21871579, z: -1.9957867}
-  m_LocalScale: {x: -1.2073712, y: 1, z: 0.26432}
+  m_LocalScale: {x: 1.207371, y: 1, z: 0.26432}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2080517013}
@@ -2193,7 +2205,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1497420114}
   m_Layer: 0
-  m_Name: Juggle point
+  m_Name: Desk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2588,7 +2600,7 @@ GameObject:
   - component: {fileID: 2048778168}
   - component: {fileID: 2048778167}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Desk plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

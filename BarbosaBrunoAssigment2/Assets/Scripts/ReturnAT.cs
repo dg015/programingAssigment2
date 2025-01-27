@@ -8,9 +8,10 @@ namespace NodeCanvas.Tasks.Actions {
 	public class ReturnAT : ActionTask {
 
 
-        public Transform TablePressPlate;
+       
         public BBParameter<float> WalkSpeed;
         public BBParameter<int> currentState;
+        public BBParameter<Transform> DeskLocation;
 
 
         //Use for initialization. This is called only once in the lifetime of the task.
@@ -29,7 +30,7 @@ namespace NodeCanvas.Tasks.Actions {
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
             //return to table
-            if (Vector3.Distance(agent.transform.position, TablePressPlate.position) < 0.5f)
+            if (Vector3.Distance(agent.transform.position, DeskLocation.value.position) < 0.5f)
             {
                 //if theyre there stop
                 Debug.Log("arrived");
@@ -59,7 +60,7 @@ namespace NodeCanvas.Tasks.Actions {
             float WalkingTowards = WalkSpeed.value * Time.deltaTime;
 
             //move character to there
-            agent.transform.position = Vector3.MoveTowards(agent.transform.position, TablePressPlate.position, WalkingTowards);
+            agent.transform.position = Vector3.MoveTowards(agent.transform.position, DeskLocation.value.position, WalkingTowards);
         }
     }
 }

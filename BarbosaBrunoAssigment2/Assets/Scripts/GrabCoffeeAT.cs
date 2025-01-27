@@ -7,7 +7,7 @@ namespace NodeCanvas.Tasks.Actions {
 
 	public class GrabCoffeeAT : ActionTask {
 
-        public Transform CoffeePressPlate;
+        public BBParameter<Transform> CoffeePressPlate;
         public BBParameter<float> WalkSpeed;
         public BBParameter<bool> Ordering;
         public BBParameter<int> currentState;
@@ -29,7 +29,7 @@ namespace NodeCanvas.Tasks.Actions {
 		protected override void OnUpdate() {
 
 
-            if (Vector3.Distance(agent.transform.position, CoffeePressPlate.position) < 0.5f)
+            if (Vector3.Distance(agent.transform.position, CoffeePressPlate.value.position) < 0.5f)
             {
                 //if theyre close enough to the machine make them order
                 Ordering.value = true;
@@ -60,7 +60,7 @@ namespace NodeCanvas.Tasks.Actions {
             float WalkingTowards = WalkSpeed.value * Time.deltaTime;
 
             //make them walk there
-            agent.transform.position = Vector3.MoveTowards(agent.transform.position, CoffeePressPlate.position, WalkingTowards);
+            agent.transform.position = Vector3.MoveTowards(agent.transform.position, CoffeePressPlate.value.position, WalkingTowards);
         }
     }
 }
