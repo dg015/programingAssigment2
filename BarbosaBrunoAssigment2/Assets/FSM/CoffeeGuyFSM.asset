@@ -21,7 +21,7 @@ MonoBehaviour:
     _version: 3.31
     _category: 
     _comments: 
-    _translation: {x: -43.0092, y: -217.68762}
+    _translation: {x: -38, y: -136}
     _zoomFactor: 0.9302706
   _haltSerialization: 0
   _externalSerializationFile: {fileID: 0}
