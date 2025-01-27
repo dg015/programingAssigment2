@@ -1073,6 +1073,8 @@ MonoBehaviour:
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"MaxShakeIntensity":{"_value":0.2,"_name":"MaxShakeIntensity","_id":"c9587802-e471-4632-bf71-565c750017e1","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"maxCaffeineDuration":{"_value":15.0,"_name":"maxCaffeineDuration","_id":"412fb141-0929-4809-b58a-a72a2df0af90","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Ordering":{"_name":"Ordering","_id":"c1d00f26-73da-4f36-93e3-0833e816986b","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Current
+    state":{"_name":"Current state","_id":"b7de9e82-15c6-4da9-a0cc-8812012ee439","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
   _objectReferences: []
   _serializedVariables:
@@ -1094,6 +1096,9 @@ MonoBehaviour:
   - _json: '{"_name":"Ordering","_id":"c1d00f26-73da-4f36-93e3-0833e816986b","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
+  - _json: '{"_name":"Current state","_id":"b7de9e82-15c6-4da9-a0cc-8812012ee439","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
+    _references: []
 --- !u!114 &718011004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1107,11 +1112,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"CaffeineDuration":{"_name":"CaffeineDuration","_targetVariableID":"c39b6927-b82c-4b91-b32c-0bda69853c19"},"ShakeIntensity":{"_name":"ShakeIntensity","_targetVariableID":"1236dcc8-6045-49d2-a4be-5807ea9f9c2b"},"MaxCaffeineDuration":{"_name":"maxCaffeineDuration","_targetVariableID":"412fb141-0929-4809-b58a-a72a2df0af90"},"MaxShakeIntensity":{"_name":"MaxShakeIntensity","_targetVariableID":"c9587802-e471-4632-bf71-565c750017e1"},"$type":"NodeCanvas.Tasks.Actions.ShakeAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Shake","_position":{"x":523.0159,"y":178.0},"_comment":"character
-    shakes","$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[{"SmokeParticle":1,"spawnPoint":2,"$type":"NodeCanvas.Tasks.Actions.OutOfCoffee"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Out","_position":{"x":272.92,"y":394.038},"_comment":"character
-    realizes theyre out of coffee","$type":"NodeCanvas.StateMachines.ActionState","$id":"1"},{"_actionList":{"executionMode":1,"actions":[{"CoffeePressPlate":3,"WalkSpeed":{"_name":"WalkSpeed","_targetVariableID":"7131942d-be1d-4fcb-95ae-87b480e15c47"},"Ordering":{"_name":"Ordering","_targetVariableID":"c1d00f26-73da-4f36-93e3-0833e816986b"},"$type":"NodeCanvas.Tasks.Actions.GrabCoffeeAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Grab","_position":{"x":474.5096,"y":569.7598},"_comment":"Character
-    walks towards coffee machine","$type":"NodeCanvas.StateMachines.ActionState","$id":"2"},{"_actionList":{"executionMode":1,"actions":[{"TablePressPlate":4,"WalkSpeed":{"_name":"WalkSpeed","_targetVariableID":"7131942d-be1d-4fcb-95ae-87b480e15c47"},"$type":"NodeCanvas.Tasks.Actions.ReturnAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Return","_position":{"x":728.0,"y":381.0},"_comment":"character
-    returns to wok","$type":"NodeCanvas.StateMachines.ActionState","$id":"3"},{"_nestedFSM":{"_value":5},"_position":{"x":377.5959,"y":-9.473694},"$type":"NodeCanvas.StateMachines.NestedFSMState","$id":"4"}],"connections":[{"_condition":{"CaffeineDuration":{"_name":"CaffeineDuration","_targetVariableID":"c39b6927-b82c-4b91-b32c-0bda69853c19"},"$type":"NodeCanvas.Tasks.Conditions.IsCaffeinated"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"$type":"NodeCanvas.Tasks.Conditions.GotTheCoffeCT"},"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
+  _boundGraphSerialization: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"CaffeineDuration":{"_name":"CaffeineDuration","_targetVariableID":"c39b6927-b82c-4b91-b32c-0bda69853c19"},"ShakeIntensity":{"_name":"ShakeIntensity","_targetVariableID":"1236dcc8-6045-49d2-a4be-5807ea9f9c2b"},"MaxCaffeineDuration":{"_name":"maxCaffeineDuration","_targetVariableID":"412fb141-0929-4809-b58a-a72a2df0af90"},"MaxShakeIntensity":{"_name":"MaxShakeIntensity","_targetVariableID":"c9587802-e471-4632-bf71-565c750017e1"},"currentState":{"_name":"Current
+    state","_targetVariableID":"b7de9e82-15c6-4da9-a0cc-8812012ee439"},"$type":"NodeCanvas.Tasks.Actions.ShakeAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Shake","_position":{"x":523.0159,"y":178.0},"_comment":"character
+    shakes","$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[{"SmokeParticle":1,"spawnPoint":2,"currentState":{"_name":"Current
+    state","_targetVariableID":"b7de9e82-15c6-4da9-a0cc-8812012ee439"},"$type":"NodeCanvas.Tasks.Actions.OutOfCoffee"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Out","_position":{"x":272.92,"y":394.038},"_comment":"character
+    realizes theyre out of coffee","$type":"NodeCanvas.StateMachines.ActionState","$id":"1"},{"_actionList":{"executionMode":1,"actions":[{"CoffeePressPlate":3,"WalkSpeed":{"_name":"WalkSpeed","_targetVariableID":"7131942d-be1d-4fcb-95ae-87b480e15c47"},"Ordering":{"_name":"Ordering","_targetVariableID":"c1d00f26-73da-4f36-93e3-0833e816986b"},"currentState":{"_name":"Current
+    state","_targetVariableID":"b7de9e82-15c6-4da9-a0cc-8812012ee439"},"$type":"NodeCanvas.Tasks.Actions.GrabCoffeeAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Grab","_position":{"x":474.5096,"y":569.7598},"_comment":"Character
+    walks towards coffee machine","$type":"NodeCanvas.StateMachines.ActionState","$id":"2"},{"_actionList":{"executionMode":1,"actions":[{"TablePressPlate":4,"WalkSpeed":{"_name":"WalkSpeed","_targetVariableID":"7131942d-be1d-4fcb-95ae-87b480e15c47"},"currentState":{"_name":"Current
+    state","_targetVariableID":"b7de9e82-15c6-4da9-a0cc-8812012ee439"},"$type":"NodeCanvas.Tasks.Actions.ReturnAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Return","_position":{"x":727.9999,"y":382.421},"_comment":"character
+    returns to wok","$type":"NodeCanvas.StateMachines.ActionState","$id":"3"},{"_position":{"x":292.3322,"y":-121.8051},"$type":"NodeCanvas.StateMachines.AnyState"},{"_nestedFSM":{"_value":5},"_name":"Bathroom
+    break","_position":{"x":324.8137,"y":-16.24062},"$type":"NodeCanvas.StateMachines.NestedFSMState"}],"connections":[{"_condition":{"CaffeineDuration":{"_name":"CaffeineDuration","_targetVariableID":"c39b6927-b82c-4b91-b32c-0bda69853c19"},"$type":"NodeCanvas.Tasks.Conditions.IsCaffeinated"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"$type":"NodeCanvas.Tasks.Conditions.GotTheCoffeCT"},"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
   - {fileID: 1378986498098665891, guid: 64bf3911f6d49014fadf5fc9bd20352b, type: 3}
@@ -1123,8 +1133,8 @@ MonoBehaviour:
     _version: 3.31
     _category: 
     _comments: 
-    _translation: {x: -42, y: 171}
-    _zoomFactor: 0.73888534
+    _translation: {x: -170, y: 33}
+    _zoomFactor: 0.7037468
   _firstActivation: 0
   _enableAction: 0
   _disableAction: 0

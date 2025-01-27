@@ -11,7 +11,9 @@ namespace NodeCanvas.Tasks.Actions {
         public BBParameter<float> MaxCaffeineDuration;
         public BBParameter<float> MaxShakeIntensity;
         private Vector3 originalPosition;
-		//private float MaxShakeIntensity = 0.2f;
+
+        public BBParameter<int> currentState;
+        //private float MaxShakeIntensity = 0.2f;
         //private float MaxCaffeineDuration = 7f;
 
         //Use for initialization. This is called only once in the lifetime of the task.
@@ -26,8 +28,8 @@ namespace NodeCanvas.Tasks.Actions {
 		//Call EndAction() to mark the action as finished, either in success or failure.
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
-			
-			
+
+			currentState.value = 1;
 
 
 		}

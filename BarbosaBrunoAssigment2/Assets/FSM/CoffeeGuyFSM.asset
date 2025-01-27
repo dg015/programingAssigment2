@@ -12,15 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f945e777233a59f4aba40aeca29093a6, type: 3}
   m_Name: CoffeeGuyFSM
   m_EditorClassIdentifier: 
-  _serializedGraph: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_nestedFSM":{"_value":1},"_position":{"x":459.0,"y":506.0},"$type":"NodeCanvas.StateMachines.NestedFSMState"}],"connections":[],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
-  _objectReferences:
-  - {fileID: 0}
-  - {fileID: 11400000}
+  _serializedGraph: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Walk
+    to bathroom","_position":{"x":196.9692,"y":421.3867},"$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Use
+    bathroom","_position":{"x":465.4332,"y":445.5689},"$type":"NodeCanvas.StateMachines.ActionState","$id":"1"},{"_actionList":{"executionMode":1,"actions":[]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Leave
+    bathroom","_position":{"x":317.3311,"y":612.35},"$type":"NodeCanvas.StateMachines.ActionState","$id":"2"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
+  _objectReferences: []
   _graphSource:
     _version: 3.31
     _category: 
     _comments: 
-    _translation: {x: 80, y: -76}
-    _zoomFactor: 0.7504431
+    _translation: {x: -43.0092, y: -217.68762}
+    _zoomFactor: 0.9302706
   _haltSerialization: 0
   _externalSerializationFile: {fileID: 0}

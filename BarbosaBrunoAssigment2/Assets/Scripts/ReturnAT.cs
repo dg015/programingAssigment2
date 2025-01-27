@@ -10,6 +10,7 @@ namespace NodeCanvas.Tasks.Actions {
 
         public Transform TablePressPlate;
         public BBParameter<float> WalkSpeed;
+        public BBParameter<int> currentState;
 
 
         //Use for initialization. This is called only once in the lifetime of the task.
@@ -22,7 +23,7 @@ namespace NodeCanvas.Tasks.Actions {
 		//Call EndAction() to mark the action as finished, either in success or failure.
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
-			
+            currentState.value = 4;
 		}
 
 		//Called once per frame while the action is active.
