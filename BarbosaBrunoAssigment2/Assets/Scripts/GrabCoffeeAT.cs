@@ -55,7 +55,6 @@ namespace NodeCanvas.Tasks.Actions {
 
         private void WalkToCoffee()
         {
-
             Debug.Log("gotta get more coffee");
             //get the walk speed
             float WalkingTowards = WalkSpeed.value * Time.deltaTime;
