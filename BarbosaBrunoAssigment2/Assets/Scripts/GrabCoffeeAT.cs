@@ -1,6 +1,7 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 using UnityEngine;
+using TMPro;
 
 
 namespace NodeCanvas.Tasks.Actions {
@@ -11,6 +12,9 @@ namespace NodeCanvas.Tasks.Actions {
         public BBParameter<float> WalkSpeed;
         public BBParameter<bool> Ordering;
         public BBParameter<int> currentState;
+
+        [SerializeField] private float bobSpeedo;
+        public BBParameter<TMP_Text> text;
 
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
